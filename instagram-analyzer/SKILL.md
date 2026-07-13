@@ -31,8 +31,8 @@ npx skills add BaishyaDh/skills --skill instagram-setup-guide
    - **Audience Alignment:** Cross-reference top-performing posts with the audience demographics to see if the content aligns with the core age group.
 
 3. **Actionable Recommendations**:
-   - **CRITICAL:** Before generating recommendations, you MUST use your tools to search the user's current workspace for a `niche.md` or brand guidelines file. If one exists, you must read it.
-   - Ensure all your advice strictly aligns with the brand's core value proposition, target audience, and content pillars defined in that file.
+   - **CRITICAL:** Before generating recommendations, you MUST use your tools to search the user's current workspace for a `niche.md` (or brand guidelines file) AND an `instagram_strategy.md` (or strategy/tactics file). If either of these exist, you must read them.
+   - Ensure all your advice strictly aligns with the brand's core value proposition defined in the niche file, AND leverages the specific psychological/algorithmic tactics defined in the strategy file.
    - Provide 3-5 concise, highly practical tips based on both the deep data and the specific business niche. E.g., if completion rate is low, suggest faster cuts or a stronger hook. If saves/shares are high, suggest creating more educational content tailored to the brand's audience.
 
 4. **Send Notification**:
