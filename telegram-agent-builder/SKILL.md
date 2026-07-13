@@ -33,9 +33,10 @@ When invoked, strictly follow these steps sequentially:
    - Executes `process.exit(0)` immediately.
    *(Explain to the user that cleanly exiting the script is the secret sauce: it forces the background task to complete, which instantly triggers Antigravity's reactive wake-up alarm in the IDE!)*
 4. Generate the **Reply Script** (`bots/telegram/reply.js`). This script must:
-   - Accept an absolute file path as a command line argument (`process.argv[2]`).
-   - Read the text content from that file.
-   - URL-encode the text and send it to the `sendMessage` Telegram API using `fetch`.
+   - Accept the response text as a command line argument (`process.argv[2]`).
+   - Use RegEx to automatically convert standard Markdown (like `**bold**`, `[text](url)`, and `` `code` ``) into Telegram-friendly HTML (e.g. `<b>bold</b>`, `<a href="url">text</a>`, `<code>code</code>`).
+   - Append `parse_mode=HTML` to the Telegram API request URL.
+   - URL-encode the converted text and send it to the `sendMessage` Telegram API using `fetch`.
 
 ### Phase 3: Arming the System
 1. Request explicit permission from the user to whitelist the execution of `node bots/telegram/poller.js` and `node bots/telegram/reply.js` using the `ask_permission` tool so the loop can run silently without prompting them.
