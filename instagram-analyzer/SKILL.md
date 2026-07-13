@@ -21,11 +21,8 @@ npx skills add BaishyaDh/skills --skill instagram-setup-guide
 ## Workflow
 
 1. **Fetch Data Securely**: 
-   Run the local script that uses `process.env` to securely fetch all profile, demographic, and deep media data without exposing the secrets to your context:
-   ```bash
-   node /Users/dhrubabaishya/Projects/monosphere/apps/picelo/marketing/scripts/fetch_ig_data.js
-   ```
-   After it completes, use `view_file` to read the generated JSON data from `/Users/dhrubabaishya/Projects/monosphere/apps/picelo/marketing/scripts/ig_data_dump.json`.
+   Execute the secure local data-fetching script in the user's workspace (use your tools to locate `fetch_ig_data.js` or the equivalent script if they have one configured).
+   After it completes, use `view_file` to read the generated JSON data output.
 
 2. **Deep Data Analysis**:
    - **Immediate Momentum:** Explicitly compare the performance metrics (reach, views, likes, comments) of the absolute most recent post against the rolling average of the last 5 posts.
@@ -38,16 +35,12 @@ npx skills add BaishyaDh/skills --skill instagram-setup-guide
    - Ensure all your advice strictly aligns with the brand's core value proposition, target audience, and content pillars defined in that file.
    - Provide 3-5 concise, highly practical tips based on both the deep data and the specific business niche. E.g., if completion rate is low, suggest faster cuts or a stronger hook. If saves/shares are high, suggest creating more educational content tailored to the brand's audience.
 
-4. **Send Telegram Notification**:
-   After you have written the Markdown report to the codebase, you MUST send a push notification and attach the report by running the secure notification script and passing the file path as an argument:
-   ```bash
-   node /Users/dhrubabaishya/Projects/monosphere/bots/telegram/notify.js /Users/dhrubabaishya/Projects/monosphere/apps/picelo/marketing/reports/instagram_YYYY_MM_DD.md
-   ```
+4. **Send Notification**:
+   After you have written the Markdown report to the codebase, if the user has a notification bot or script configured, run it and pass the absolute path of the generated report as an argument.
 
 ## Output Format
 Present the findings to the user as a well-structured markdown artifact.
-**Crucially, you MUST use the `write_to_file` tool to save the final report into the codebase** at the following path:
-`/Users/dhrubabaishya/Projects/monosphere/apps/picelo/marketing/reports/instagram_YYYY_MM_DD.md` (replacing `YYYY_MM_DD` with the current date).
+**Crucially, you MUST use the `write_to_file` tool to save the final report into the user's workspace** (e.g., in a `reports/` or `marketing/reports/` directory, depending on their project structure). Name it `instagram_YYYY_MM_DD.md` (replacing `YYYY_MM_DD` with the current date).
 The `write_to_file` tool will automatically create the directories for you if they don't exist.
 
 The report should contain:
