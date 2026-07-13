@@ -28,6 +28,7 @@ npx skills add BaishyaDh/skills --skill instagram-setup-guide
    After it completes, use `view_file` to read the generated JSON data from `/Users/dhrubabaishya/Projects/monosphere/apps/picelo/marketing/scripts/ig_data_dump.json`.
 
 2. **Deep Data Analysis**:
+   - **Immediate Momentum:** Explicitly compare the performance metrics (reach, views, likes, comments) of the absolute most recent post against the rolling average of the last 5 posts.
    - **Retention & Hooks:** Analyze average watch time and completion rates for Reels to judge the effectiveness of the video "hooks" (the first 3 seconds) and the skip rate.
    - **Virality:** Assess reach vs. impressions to determine how much the content is pushed to non-followers.
    - **Audience Alignment:** Cross-reference top-performing posts with the audience demographics to see if the content aligns with the core age group.
@@ -49,6 +50,6 @@ The `write_to_file` tool will automatically create the directories for you if th
 
 The report should contain:
 - **Profile Summary** (Followers, Following, Total Posts)
-- **Recent Performance** (Averages across the last few posts)
+- **Recent Performance** (Specific metrics of the absolute most recent post, compared against the calculated average of the last 5 posts)
 - **Top Performing Post** (Link and stats)
 - **Actionable Recommendations** (What to do next)
