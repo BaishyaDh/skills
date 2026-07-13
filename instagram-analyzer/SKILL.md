@@ -34,7 +34,9 @@ npx skills add BaishyaDh/skills --skill instagram-setup-guide
    - **Audience Alignment:** Cross-reference top-performing posts with the audience demographics to see if the content aligns with the core age group.
 
 3. **Actionable Recommendations**:
-   - Provide 3-5 concise, actionable tips based on the deep data. E.g., if completion rate is low, suggest faster cuts or a stronger hook. If saves/shares are high, suggest creating more educational content.
+   - **CRITICAL:** Before generating recommendations, you MUST look for and read any `niche.md` or brand guidelines file in the user's workspace (e.g., `/Users/dhrubabaishya/Projects/monosphere/apps/picelo/marketing/niche.md`). 
+   - Ensure all your advice strictly aligns with the brand's core value proposition, target audience, and content pillars defined in that file.
+   - Provide 3-5 concise, highly practical tips based on both the deep data and the specific business niche. E.g., if completion rate is low, suggest faster cuts or a stronger hook. If saves/shares are high, suggest creating more educational content tailored to the brand's audience.
 
 4. **Send Telegram Notification**:
    After you have written the Markdown report to the codebase, you MUST send a push notification and attach the report by running the secure notification script and passing the file path as an argument:
