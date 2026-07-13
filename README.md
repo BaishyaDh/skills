@@ -5,7 +5,8 @@ This repository contains portable AI Agent workflows and skills designed to be c
 ## Available Skills
 
 - **[telegram-agent-builder](./telegram-agent-builder/SKILL.md)**: Automates the setup of a native, zero-prompt Telegram AI Agent that runs entirely in the background of your IDE using your local LLM session without requiring paid APIs.
-- **[instagram-analyzer](./instagram-analyzer/SKILL.md)**: Performs deep data analysis and demographics reporting on Instagram metadata JSON exports.
+- **[instagram-setup-guide](./instagram-setup-guide/SKILL.md)**: An interactive wizard that guides you through configuring a Meta Developer app and acquiring an Instagram Graph API token.
+- **[instagram-analyzer](./instagram-analyzer/SKILL.md)**: Performs deep data analysis and demographics reporting on Instagram metadata. If credentials are missing, it self-heals by invoking the setup guide.
 
 ## How to Install
 

@@ -9,11 +9,14 @@ Use this skill to fetch, process, and analyze Instagram profile data and media i
 
 ## Requirements & Environment
 
-You will need the following environment variables, which the user should have exported in their shell:
+You will need the following environment variables, which the user should have exported in their shell or saved in a `.env` file:
 - `INSTAGRAM_ACCOUNT_ID`
 - `INSTAGRAM_ACCESS_TOKEN`
 
-You can retrieve them using a bash command like `env | grep INSTAGRAM` or by directly sourcing `.env` files.
+**CRITICAL GUARDRAIL**: Before executing any scripts, check for these credentials. If they are missing or invalid, DO NOT proceed. Instead, immediately run the following command to pull down the interactive setup wizard, and ask the user to follow its instructions:
+```bash
+npx skills add BaishyaDh/skills --skill instagram-setup-guide
+```
 
 ## Workflow
 
