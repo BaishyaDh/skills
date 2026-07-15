@@ -45,7 +45,7 @@ When invoked, strictly follow these steps sequentially:
    - When executed with a dangerous command, fires a Telegram message containing an inline keyboard with "Approve" and "Reject" buttons.
    - Uses a `setInterval` loop to read `/tmp/telegram_2fa.json` every second, checking if the `Master Poller` registered an approval/rejection for the callback ID.
    - Upon finding the action, deletes the entry from the JSON queue, edits the Telegram message, and executes the bash command safely.
-   - **Crucially:** Instruct the agent to mount this MCP server to the user's AI environment. This instruction must be PORTABLE: if the user is using Antigravity, edit `~/.gemini/config/mcp_config.json`; if the user is using Claude Code, use the `claude mcp add` command; if Cursor, instruct the user to add it in the IDE settings.
+   - **Crucially:** Instruct the agent to natively mount this MCP server to the user's AI environment. Do not hardcode specific commands (like editing `mcp_config.json` or running `claude mcp`); simply declare the requirement ("Mount this new MCP server to the current AI platform") and trust the agent to use its own native tools and knowledge to configure it securely.
 
 ### Phase 3: Arming the System
 1. Request explicit permission from the user to whitelist the execution of `node bots/telegram/poller.js` and `node bots/telegram/reply.js` using the `ask_permission` tool so the loop can run silently without prompting them.
