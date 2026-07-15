@@ -44,6 +44,7 @@ When invoked, strictly follow these steps sequentially:
    - Exposes an `execute_command` tool.
    - When executed with a dangerous command, fires a Telegram message containing an inline keyboard with "Approve" and "Reject" buttons.
    - Uses a `setInterval` loop to read `/tmp/telegram_2fa.json` every second, checking if the `Master Poller` registered an approval/rejection for the callback ID.
+   - **Self-Healing Fallback:** Before firing the 2FA request, it must use the `net` module to ping the local port `49999` to check if the Master Poller is currently alive. If the port is dead, it must spin up its own temporary fallback polling loop to catch the button tap, gracefully shutting it down once resolved.
    - Upon finding the action, deletes the entry from the JSON queue, edits the Telegram message, and executes the bash command safely.
    - **Crucially:** Instruct the agent to natively mount this MCP server to the user's AI environment. Do not hardcode specific commands (like editing `mcp_config.json` or running `claude mcp`); simply declare the requirement ("Mount this new MCP server to the current AI platform") and trust the agent to use its own native tools and knowledge to configure it securely.
 
